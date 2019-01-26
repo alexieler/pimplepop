@@ -1,0 +1,469 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,700');
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #db6b5c;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.misc-container {
+    padding-top: 10px;
+    align-self: center;
+}
+
+.sub-container-nav {
+    align-self: center;
+    font-weight: 300;
+}
+
+.sub-container-nav ul {
+    text-align: center;
+    padding: 0;
+    font-size: 1.5em;
+}
+
+.sub-container-nav ul li{
+    padding: 5px;
+}
+
+.sub-container-nav ul li a{
+    padding: 0 10px;
+}
+
+.sub-container-nav ul li a:hover {
+    color: white;
+    transition: all 0.5s ease;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.misc-container img {
+    max-width: 50px;
+}
+
+.misc-container img:hover {
+    animation: wiggle 1s ease;
+    animation-iteration-count: 1;
+    -o-animation: wiggle 1s ease;
+    -o-animation-iteration-count: 1;
+    -moz-animation:  wiggle 1s ease;
+    -moz-animation-iteration-count: 1;
+    -webkit-animation: wiggle 1s ease;
+    -webkit-animation-iteration-count: 1;
+}
+
+main {
+    margin: 20px 10px;
+    position: relative;
+}
+
+.hidden {
+    position: absolute;
+    left: -10000px;
+}
+
+h2 {
+    font-size: 5em;
+    font-weight: 600;
+    color: black;
+    margin: 20px;
+}
+
+p {
+    font-weight: 200;
+    font-size: 1.8em;
+    margin: 20px;
+}
+
+#start-button {
+    font-weight: 900;
+    font-size: 2.5em;
+    color: white;
+    padding: 1em;
+    margin-top: 2.5em;
+    cursor: pointer;
+    animation: pulse 2s linear infinite;
+    -webkit-animation: pulse 2s linear infinite;
+    -moz-animation: pulse 2s linear infinite;
+    -o-animation: pulse 2s linear infinite;
+}
+
+#start-button:hover {
+    animation-duration: 0.8s;
+    -webkit-animation-duration: 0.8s;
+    -moz-animation-duration: 0.8s;
+    -o-animation-duration: 0.8s;
+}
+
+.center {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.initualize-game,
+.explosion {
+    position: absolute;
+    text-align: center;
+    height: 100%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    background-color: #8E392E;
+    border-radius: 1em;
+    z-index: 800;
+    width: 500px;
+}
+
+.splatter {
+    position: absolute;
+    top: -200%;
+    background: url("images/splatter.png") center;
+    background-repeat: no-repeat;
+    background-size: 450px;
+    z-index: 801;
+    max-width: 500px;
+    transform: sink 0.5s ease-in-out;
+}
+
+.game {
+    margin: auto;
+    max-width: 500px;
+    border-radius: 1em;
+    background-color: #eaa280; 
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+/*the background image is going to BE the popped pimple!! */
+.card {
+    margin: 5px;
+    position: relative;
+    background: url("images/popped.png") center;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+.pimple {
+    position: absolute;
+    background: url("images/pimple.png") center;
+    height: 85px;
+    left: 5px;
+    width: 85px;
+    border-radius: 50%;
+    box-shadow: -4px 4px 23px -2px rgba(224,45,45,0.30);
+    transition: all 0.5s ease-in-out;
+}
+
+.pimple:hover {
+    transform: scale(1.15);
+}
+
+.content {
+    background-color: #eaa280;
+    padding: 0.1em 0;
+    width: 100%;
+    font-size: 0.85em;
+}
+
+.content p a {
+    color: black;
+    text-decoration: none;
+}
+
+.fas {
+    margin-right: 10px;
+    animation: slide 1s ease-in-out infinite;
+    -webkit-animation: slide 1s ease-in-out infinite;
+    -moz-animation: slide 1s ease-in-out infinite;
+    -o-animation: slide 1s ease-in-out infinite;
+}
+
+footer {
+    background-color: #db6b5c;
+}
+
+#footer-sub-container {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#footer-sub-container img{
+    display: inline-block;
+    align-self: center;
+    margin-bottom: 10px;
+    width: 25px;
+}
+
+#footer-nav {
+    font-size: 0.7em;
+}
+
+#footer-sub-container p {
+    align-self: center;
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    30% { transform: scale(1); }
+    40% { transform: scale(1.08); }
+    50% { transform: scale(1); }
+    60% { transform: scale(1); }
+    70% { transform: scale(1.05); }
+    80% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+@-webkit-keyframes pulse {
+    0% { transform: scale(1); }
+    30% { transform: scale(1); }
+    40% { transform: scale(1.08); }
+    50% { transform: scale(1); }
+    60% { transform: scale(1); }
+    70% { transform: scale(1.05); }
+    80% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+@-moz-keyframes pulse {
+    0% { transform: scale(1); }
+    30% { transform: scale(1); }
+    40% { transform: scale(1.08); }
+    50% { transform: scale(1); }
+    60% { transform: scale(1); }
+    70% { transform: scale(1.05); }
+    80% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+@-o-keyframes pulse {
+    0% { transform: scale(1); }
+    30% { transform: scale(1); }
+    40% { transform: scale(1.08); }
+    50% { transform: scale(1); }
+    60% { transform: scale(1); }
+    70% { transform: scale(1.05); }
+    80% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+@-webkit-keyframes startGame {
+    from {top: 0%; transform: rotate(0deg);}
+    to {top: 100%; transform: rotate(200deg);}
+}
+
+@-moz-keyframes startGame {
+    from {top: 0%; transform: rotate(0deg);}
+    to {top: 100%; transform: rotate(200deg);}
+}
+
+@-o-keyframes startGame {
+    from {top: 0%; transform: rotate(0deg);}
+    to {top: 100%; transform: rotate(200deg);}
+}
+
+@keyframes startGame {
+    from {top: 0%; transform: rotate(0deg);}
+    to {top: 100%; transform: rotate(200deg);}
+}
+
+@keyframes slide {
+    0%,
+    100% {
+        transform: translate(0,0);
+    }
+    50% {
+        transform: translate(5px, 0);
+    }
+}
+
+@-webkit-keyframes slide {
+    0%,
+    100% {
+        transform: translate(0,0);
+    }
+    50% {
+        transform: translate(5px, 0);
+    }
+}
+
+@-moz-keyframes slide {
+    0%,
+    100% {
+        transform: translate(0,0);
+    }
+    50% {
+        transform: translate(5px, 0);
+    }
+}
+
+@-o-keyframes slide {
+    0%,
+    100% {
+        transform: translate(0,0);
+    }
+    50% {
+        transform: translate(5px, 0);
+    }
+}
+
+@keyframes wiggle {
+    20% {
+      transform: translateX(4px);
+    }
+    40% {
+      transform: translateX(-4px);
+    }
+    60% {
+      transform: translateX(2px);
+    }
+    80% {
+      transform: translateX(-1px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes wiggle {
+    20% {
+        transform: translateX(4px);
+    }
+      40% {
+        transform: translateX(-4px);
+    }
+      60% {
+        transform: translateX(2px);
+    }
+      80% {
+        transform: translateX(-1px);
+    }
+      100% {
+        transform: translateX(0);
+    }
+}
+
+@-moz-keyframes wiggle {
+    20% {
+        transform: translateX(4px);
+    }
+      40% {
+        transform: translateX(-4px);
+    }
+      60% {
+        transform: translateX(2px);
+    }
+      80% {
+        transform: translateX(-1px);
+    }
+      100% {
+        transform: translateX(0);
+    }
+}
+
+@-o-keyframes wiggle {
+    20% {
+        transform: translateX(4px);
+    }
+      40% {
+        transform: translateX(-4px);
+    }
+      60% {
+        transform: translateX(2px);
+    }
+      80% {
+        transform: translateX(-1px);
+    }
+      100% {
+        transform: translateX(0);
+    }
+}
+
+/*MEDIA QUERY */
+/*bigger than mobile */
+@media screen and (min-width: 760px) {
+
+    .sub-container-nav ul {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    .sub-container-nav ul li {
+        margin: 0 10px;
+    }
+
+    .initualize-game {
+        max-width: 760px;
+    }
+
+    .game {
+        max-width: 760px;
+    }
+
+    .card {
+        height: 125px;
+        width: 125px;
+    }
+
+    .pimple {
+        height: 125px;
+        width: 125px;
+    }
+
+    .splatter {
+        max-width: 760px;
+        background-repeat: no-repeat;
+        background-size: 500px;
+    }
+
+    .content {
+        font-size: 0.9em;
+    }
+
+    #footer-sub-container {
+        margin-bottom: 1em;
+    }
+
+    #footer-nav {
+        align-self: right;
+        text-align: center;
+    }
+
+    #footer-nav li a{
+        padding: 0;
+    }
+}
